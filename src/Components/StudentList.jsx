@@ -2,14 +2,12 @@ import react from 'react';
 import { render } from 'react-dom';
 import StudentCard from './StudentCard';
 
-export default StudentList = () => {
+export default StudentList = ({ students }) => {
     return (
-        <div>
-            <h1>All Students</h1>
+        <div className="student-list">
+            <h2>All Students</h2>
             <ul>
-                <li>
-                    <StudentCard />;
-                </li>
+                {students.map(student => (<StudentCard key={student.id} student={student} />))}
             </ul>
         </div>
     );
