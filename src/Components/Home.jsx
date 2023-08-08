@@ -1,14 +1,22 @@
-import react from 'react';
-import { render } from 'react-dom';
+import React, { useState } from 'react';
 import StudentList from './StudentList';
-import CohortFilter from './CohortFilter';
 
 
-export default Home = () => {
-    return(
-        <div className="home">
-            <CohortFilter />
-            <StudentList />
-        </div>
-    )
+const Home = () => {
+    const [isGridView, setIsGridView] = useState(false);
+    const toggleGridView = () => {
+        setIsGridView(!isGridView);
+    }
+
+    return (
+       
+            <div className={`home ${isGridView ? 'grid-view' : 'list-view'}`}>
+                <button onClick={toggleGridView}>
+                    {isGridView ? 'Switch to List View' : 'Switch to Grid View'}
+                </button>
+                <StudentList />
+            </div>
+    );
 }
+
+export default Home;

@@ -9,13 +9,26 @@ export default function StudentCard({ student }) {
         setShowDetails(!showDetails);
 };
 
+const formatFullName = (names) => {
+    const { preferredName, middleName, surname } = names;
+    const middleInitial = middleName ? `${middleName.charAt(0)}.` : '';
+    return `${preferredName} ${middleInitial} ${surname}`;
+}
+const formatDOB = (dob) => {
+    const date = new Date(dob);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+
 return (
     <li className="student-card">
         <div>
             <img src={student.ptofilePhoto} alt={student.names.preferredName} />
-            <p>{student.names.preferredName}</p>
+            <p>{formatFullName(student.names)}</p>
             <p>{student.username}</p>
-            <p>{student.dob}</p>
+            <p>{formatDOB(student.dob)}</p>
+            <p>Notes: {student.notes.length}</p>
             <button onClick={toggleDetails}>{showDetails ? 'Hide' : 'Show'} Details</button>
         </div>    
             {showDetails && <StudentDetails student={student} />}
