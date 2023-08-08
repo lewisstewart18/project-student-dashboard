@@ -1,5 +1,4 @@
-import react from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import StudentDetails from './StudentDetails';
 
 
@@ -24,7 +23,7 @@ const formatDOB = (dob) => {
 return (
     <li className="student-card">
         <div>
-            <img src={student.ptofilePhoto} alt={student.names.preferredName} />
+            <img src={student.profilePhoto} alt={student.names.preferredName} />
             <p>{formatFullName(student.names)}</p>
             <p>{student.username}</p>
             <p>{formatDOB(student.dob)}</p>

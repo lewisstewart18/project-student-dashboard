@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import studentsData from '../data/data.json';
+import students from '../data/data.json';
 
 function isOnTrack(codewars, certifications) {
     const isResumeCertified = certifications.resume;

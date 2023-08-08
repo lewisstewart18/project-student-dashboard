@@ -14,7 +14,7 @@ const Home = () => {
                 <button onClick={toggleGridView}>
                     {isGridView ? 'Switch to List View' : 'Switch to Grid View'}
                 </button>
-                <StudentList />
+                <StudentList students={ students } />
             </div>
     );
 }

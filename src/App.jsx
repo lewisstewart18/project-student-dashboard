@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 import './App.css';
-import CohortFilter from './Components/CohortFilter';
-import Home from './Components/Home';
+import CohortFilter from './Components/CohortFilter.jsx';
+import Home from './Components/Home.jsx';
 
 
 

@@ -1,8 +1,7 @@
-import react from 'react';
-import { render } from 'react-dom';
+import React from 'react';
 import StudentCard from './StudentCard';
 
-export default StudentList = ({ students }) => {
+const StudentList = ({ students }) => {
     return (
         <div className="student-list">
             <h2>All Students</h2>
@@ -12,3 +11,5 @@ export default StudentList = ({ students }) => {
         </div>
     );
 };
+
+export default StudentList;
