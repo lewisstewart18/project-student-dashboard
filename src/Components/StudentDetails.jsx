@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import studentsData from './data.json';
+import studentsData from '../data/data.json';
 
 function isOnTrack(codewars, certifications) {
     const isResumeCertified = certifications.resume;
     const isLinkedInCertified = certifications.linkedin;
     const isGitHubCertified = certifications.github;
     const isMockInterviewCertified = certifications.mockInterview;
-  
     const isCodewarsOver600 = codewars.current.total > 600;
   
     if (
@@ -22,10 +21,9 @@ function isOnTrack(codewars, certifications) {
     }
   }
   
-}
 
 export default function StudentDetails({ student }) {
-  const { codewars, certifications, cohort, github, linkedin, twitter, website, notes } = student;
+  const { codewars, certifications, cohort, github, linkedin, twitter, website} = student;
 
   const [notes, setNotes] = useState([]);
   const [isOn, setIsOn] = useState(isOnTrack(codewars, certifications));
@@ -56,7 +54,6 @@ export default function StudentDetails({ student }) {
         <p>LinkedIn: {linkedin}</p>
         <p>Twitter: {twitter}</p>
         <p>Website: {website}</p>
-        <p>Notes: {notes}</p>
       </div>
 <h3>Add Notes</h3>
 <form onSubmit={handleSubmit}>
