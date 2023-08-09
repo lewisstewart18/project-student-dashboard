@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import CohortList from './components/CohortList';
-import StudentList from './components/StudentList';
+import Header from './Header';
+import CohortList from './CohortList';
+import StudentList from './StudentList';
 import './App.css';
 
 function App() {
@@ -9,7 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      import React, { useState } from 'react';
+
       <CohortList setSelectedCohort={setSelectedCohort} />
       <StudentList selectedCohort={selectedCohort} />
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import studentsData from '../data/data.json'; // Import your JSON data
+import studentsData from './data.json'; // Import your JSON data
 import StudentCard from './StudentCard';
 
 function StudentList({ selectedCohort }) {
