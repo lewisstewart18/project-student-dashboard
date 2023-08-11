@@ -5,13 +5,19 @@ import StudentList from './components/StudentList';
 import './App.css';
 
 function App() {
-  const [selectedCohort, setSelectedCohort] = useState(null);
+const [selectedCohort, setSelectedCohort] = useState(null);
 
   return (
     <div className="App">
       <Header />
-      <CohortList setSelectedCohort={setSelectedCohort} />
-      <StudentList selectedCohort={selectedCohort} />
+      <div className="content">
+        <div className="cohorts-list">
+          <CohortList setSelectedCohort={setSelectedCohort} />
+        </div>
+        <div className="student-list">
+          <StudentList selectedCohort={selectedCohort} />
+        </div>
+      </div>
     </div>
   );
 }

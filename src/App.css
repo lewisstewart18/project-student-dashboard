@@ -1,32 +1,111 @@
-.app {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 2fr;
-    height: 100vh;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 10px;
+  height: 100vh;
+}
+
+.header {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 1rem
+  justify-content: center
+}
+
+.content {
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 4;
+  display: flex;
+  overflow-x: auto
+}
+
+.cohorts-list {
+  grid-column: 1;
+  grid-row: 3 / span 4;
+  background-color: lightgray;
+  align-content: left;
+  padding: 20 px;
+  width:33%;
+  font-size: 35px
+}
+
+.student-list {
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 4;
+  background-color: cyan;
+  display: block;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: auto;
+  border: 1px solid black;
+  width: 100%
+}
+
+.student-list-heading {
+	overflow:none;
+	font-size: 35px
+}
+
+.student-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin: 0.5rem;
+}
+
+.student-picture {
+  margin-right: 1rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  float: left;
+}
+
+.student-picture img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   
-  .header {
-    grid-row: 1 / 2;
-    grid-column: 1 / span 3;
-    background-color: green;
-  }
-  
-  .content {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 1fr 2fr;
-    grid-row: 2 / -1;
-  }
-  
-  .cohort-filter {
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-    background-color: lightgray;
-  }
-  
-  .home {
-    grid-column: 2 / -1;
-    grid-row: 1 / -1;
-    overflow: auto; 
-    background-color: white;
-  }
+}
+
+.student-info {
+  flex: 1 1 auto;
+  float: right;
+  overflow: hidden;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  overflow: hidden;
+  margin-left: 20px;
+  border: 1px solid black;
+}
+
+.additional-details {
+	flex: 1 1 auto;
+	float: left;
+}
+
+.one-on-one {
+	float: right;
+	flex: 0 0 auto;
+	margin-left: 30px;
+	align-content: right;
+}
+
+
+
+/* ... (other styles) */
+In this updated CSS, the student-card class is set to display: flex to make the student picture and info flex items. The student-picture class's margin-right is adjusted, and the student-info class is set to flex-grow (flex: 1) to take up the remaining space. The student-details class is set to display flex with a column layout for the buttons and additional details.

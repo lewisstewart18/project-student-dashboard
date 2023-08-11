@@ -1,0 +1,1 @@
+ on the default view mode showing the studentcards  or the list mode where each student's information is displayed in a single line with a small thumbnail picture, name, birthday, and on-track status.
