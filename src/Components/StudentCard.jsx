@@ -19,16 +19,15 @@ function StudentCard({ student }) {
 
   return (
     <div className="student-card">
-      <div className="inline-block">
-        <div className="student-picture">
-          <img src={student.profilePhoto} alt={formattedName} className="image"/>
-        </div>
-        <div className="student-info">
-          <h3>{formattedName}</h3>
-          <p>Username: {student.username}</p>
-          <p>Birthday: {formattedBirthday}</p>
-          <p>On Track: {student.onTrack ? 'Yes' : 'No'}</p>
-        </div>
+      <div className="student-picture">
+        <img src={student.profilePhoto} alt={formattedName} className="image" />
+      </div>
+      <div className="student-info">
+        <h3>{formattedName}</h3>
+        <p>Username: {student.username}</p>
+        <p>Birthday: {formattedBirthday}</p>
+        <p>On Track: {student.onTrack ? 'Yes' : 'No'}</p>
+        <p>Notes Received: {student.notesReceived}</p>
       </div>
       <div className="student-details">
         <button onClick={() => setShowDetails(!showDetails)}>

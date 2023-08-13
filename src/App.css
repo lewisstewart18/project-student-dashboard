@@ -17,8 +17,8 @@ body {
   background-color: green;
   color: white;
   text-align: center;
-  padding: 1rem
-  justify-content: center
+  padding: 1rem;
+  justify-content: center;
 }
 
 .content {
@@ -44,7 +44,6 @@ body {
   background-color: cyan;
   display: block;
   flex-wrap: wrap;
-  gap: 10px;
   overflow-y: auto;
   border: 1px solid black;
   width: 100%
@@ -106,6 +105,7 @@ body {
 }
 
 
+	
 
 /* ... (other styles) */
 In this updated CSS, the student-card class is set to display: flex to make the student picture and info flex items. The student-picture class's margin-right is adjusted, and the student-info class is set to flex-grow (flex: 1) to take up the remaining space. The student-details class is set to display flex with a column layout for the buttons and additional details.
