@@ -6,14 +6,14 @@ body {
 .App {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 10px;
   height: 100vh;
 }
 
 .header {
   grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 1;
   background-color: green;
   color: white;
   text-align: center;
@@ -23,24 +23,24 @@ body {
 
 .content {
   grid-column: 1 / span 3;
-  grid-row: 3 / span 4;
+  grid-row: 2 / span 4;
   display: flex;
   overflow-x: auto
 }
 
 .cohorts-list {
   grid-column: 1;
-  grid-row: 3 / span 4;
+  grid-row: 2 / span 4;
   background-color: lightgray;
   align-content: left;
   padding: 20 px;
-  width:33%;
-  font-size: 35px
+  width: 33%;
+  font-size: 20px
 }
 
 .student-list {
   grid-column: 2 / span 2;
-  grid-row: 3 / span 4;
+  grid-row: 2 / span 4;
   background-color: cyan;
   display: block;
   flex-wrap: wrap;
@@ -50,8 +50,8 @@ body {
 }
 
 .student-list-heading {
-	overflow:none;
-	font-size: 35px
+  overflow: none;
+  font-size: 20px;
 }
 
 .student-card {
@@ -73,7 +73,7 @@ body {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  
+
 }
 
 .student-info {
@@ -93,19 +93,26 @@ body {
 }
 
 .additional-details {
-	flex: 1 1 auto;
-	float: left;
+  flex: 1 1 auto;
+  float: left;
 }
 
 .one-on-one {
-	float: right;
-	flex: 0 0 auto;
-	margin-left: 30px;
-	align-content: right;
+  float: right;
+  flex: 0 0 auto;
+  margin-left: 30px;
+  align-content: right;
 }
 
 
-	
+.student-list-info {
+  display: inline;
+  float: left
+}
 
-/* ... (other styles) */
-In this updated CSS, the student-card class is set to display: flex to make the student picture and info flex items. The student-picture class's margin-right is adjusted, and the student-info class is set to flex-grow (flex: 1) to take up the remaining space. The student-details class is set to display flex with a column layout for the buttons and additional details.
+.student-card-list-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}

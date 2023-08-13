@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import studentsData from '../data/data.json';
 import StudentCard from './StudentCard';
+import StudentCardList from './StudentCardList';
 
 function StudentList({ selectedCohort }) {
   const [isGridView, setIsGridView] = useState(true); // Track the view mode
@@ -26,11 +27,15 @@ function StudentList({ selectedCohort }) {
           {isGridView ? 'Switch to List View' : 'Switch to Grid View'}
         </button>
       </div>
-      <div className={`student-list ${isGridView ? 'grid-view' : 'list-view'}`}>
-        {filteredStudents.map(student => (
-          <StudentCard key={student.id} student={student} gridView={isGridView} />
-        ))}
-      </div>
+      {isGridView ? (
+        <div className="student-list grid-view">
+          {filteredStudents.map(student => (
+            <StudentCard key={student.id} student={student} gridView={isGridView} />
+          ))}
+        </div>
+      ) : (
+        <StudentCardList students={filteredStudents} gridView={isGridView} />
+      )}
     </div>
   );
 }

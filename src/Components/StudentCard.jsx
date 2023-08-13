@@ -6,9 +6,8 @@ function StudentCard({ student }) {
   const [showDetails, setShowDetails] = useState(false);
 
   // Format the name
-  const formattedName = `${student.names.preferredName} ${
-    student.names.middleName ? student.names.middleName.charAt(0) + '.' : ''
-  } ${student.names.surname}`;
+  const formattedName = `${student.names.preferredName} ${student.names.middleName ? student.names.middleName.charAt(0) + '.' : ''
+    } ${student.names.surname}`;
 
   // Format the birthday
   const formattedBirthday = new Date(student.dob).toLocaleDateString('en-US', {
@@ -18,7 +17,7 @@ function StudentCard({ student }) {
   });
 
   return (
-    <div className="student-card">
+    <div className="student-card" style={{ borderLeft: `4px solid ${student.cohort.color}` }}>
       <div className="student-picture">
         <img src={student.profilePhoto} alt={formattedName} className="image" />
       </div>
